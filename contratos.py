@@ -11,6 +11,9 @@ dict_valor_parcelas = {
 }
 
 def ajuste_str(valor):
+    """
+    Function used to format the values into brazilian-real currency.
+    """
     if len(valor) == 10:
         resultado = valor[:4] + '.' + valor[4:]
     elif len(valor) == 11:
@@ -20,6 +23,9 @@ def ajuste_str(valor):
     return resultado
 
 def number_to_long_number(number_p):
+    """
+    Function used to write the numbers.
+    """
     if number_p.find(',') != -1:
         number_p = number_p.split(',')
         number_p1 = int(number_p[0].replace('.', ''))
@@ -64,6 +70,7 @@ def number_to_long_number(number_p):
 
     return resultado_final
 
+# Dictionary used to transform the months
 dic_mes = {
             1 : 'janeiro',
             2 : 'fevereiro',
@@ -258,7 +265,7 @@ else:
 
 
 
-
+# Exportar o arquivo com o primeiron nome _contrato.docx
 nome_contrato_completo = nome.split()
 nome_contrato = nome_contrato_completo[0]
 nome_arquivo = f'{nome_contrato}_contrato.docx'
